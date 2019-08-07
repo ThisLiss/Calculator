@@ -94,41 +94,25 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.buttonPlus:
                         if((current.getText().length()!=0) && !operationClick) {
-                            result = Integer.parseInt(current.getText().toString());
-                            res.setText(String.format("%d %s ", result, button.getText().toString()));
-                            current.setText("");
-                            current.setSelection(current.getText().length());
-                            operationClick = true;
+                            forOper(button);
                             whatOp = 1;
                         }
                         break;
                     case R.id.buttonMinus:
                         if((current.getText().length()!=0) && !operationClick) {
-                            result = Integer.parseInt(current.getText().toString());
-                            res.setText(result + " - ");
-                            current.setText("");
-                            current.setSelection(current.getText().length());
-                            operationClick = true;
+                            forOper(button);
                             whatOp = 2;
                         }
                         break;
                     case R.id.buttonDiv:
                         if((current.getText().length()!=0) && !operationClick) {
-                            result = Integer.parseInt(current.getText().toString());
-                            res.setText(result + " / ");
-                            current.setText("");
-                            current.setSelection(current.getText().length());
-                            operationClick = true;
+                            forOper(button);
                             whatOp = 3;
                         }
                         break;
                     case R.id.buttonMul:
                         if((current.getText().length()!=0) && !operationClick) {
-                            result = Integer.parseInt(current.getText().toString());
-                            res.setText(result + " * ");
-                            current.setText("");
-                            current.setSelection(current.getText().length());
-                            operationClick = true;
+                            forOper(button);
                             whatOp = 4;
                         }
                         break;
@@ -142,11 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.buttonPow:
                         if((current.getText().length()!=0) && !operationClick) {
-                            result = Integer.parseInt(current.getText().toString());
-                            res.setText(result + "^ ");
-                            current.setText("");
-                            current.setSelection(current.getText().length());
-                            operationClick = true;
+                            forOper(button);
                             whatOp = 5;
                         }
                         break;
@@ -216,5 +196,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void forOper(Button button){
+        result = Integer.parseInt(current.getText().toString());
+        res.setText(String.format("%d %s ", result, button.getText().toString()));
+        current.setText("");
+        current.setSelection(current.getText().length());
+        operationClick = true;
     }
 }
