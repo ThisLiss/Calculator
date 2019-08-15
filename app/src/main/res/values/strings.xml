@@ -19,4 +19,8 @@
     <string name="button_per">%</string>
     <string name="button_pow">^</string>
     <string name="hint_here">Write here!</string>
+    <string name="button_close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
